@@ -6,6 +6,7 @@
 4. npm `start`
 5. localhost will be opened automatically in Browser
 
+test netlify
 # How to run e2e tests?
 ### `npm run e2e-test`
 
