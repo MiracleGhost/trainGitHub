@@ -28,4 +28,4 @@ jobs:
           start: npm start
           wait-on: http://localhost:3000
           browser: chrome
-          spec: cypress/e2e/App.cy.js
+          spec: src/App.cy.js
