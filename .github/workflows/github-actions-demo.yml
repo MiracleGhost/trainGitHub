@@ -23,7 +23,7 @@ jobs:
         with:
           project: ./
           browser: chrome
+          headed: true
           install: npm i
           build: npm run build
-          start: npm start
-      - run: npm test
+          start: npm run e2e
