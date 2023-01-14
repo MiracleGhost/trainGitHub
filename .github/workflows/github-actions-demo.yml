@@ -12,8 +12,11 @@ jobs:
     # Steps in job
     steps:
       - name: Check out branch
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
+          node-version: 16
+          cache: 'npm'
           ref: develop
       - name: Use Node.js 14.0
         uses: actions/setup-node@v3
@@ -25,7 +28,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           browser: chrome
-          install: false
+          install: npm ci
           build: npm run build
           start: npm start
           wait-on: http://localhost:3000
