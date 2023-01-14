@@ -26,4 +26,4 @@ jobs:
           headed: true
           install: npm i
           build: npm run build
-          start: npm run e2e
+          start: npm run e2e-test
