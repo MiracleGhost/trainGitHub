@@ -30,6 +30,10 @@ module.exports = {
           }
         },
       },
+	  {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
 	  { 
 		test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
 		use: ["file-loader"] 

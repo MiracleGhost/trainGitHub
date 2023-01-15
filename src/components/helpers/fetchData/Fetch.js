@@ -13,7 +13,7 @@ class FetchAPIData extends React.Component {
     }
     
     componentDidMount() {
-        const headers = {'DB-Client-Id': 'configdata.ID', 
+        const headers = {'DB-Client-Id': configdata.ID, 
                         'DB-Api-Key': configdata.KEY} 
         fetch("https://apis.deutschebahn.com/db-api-marketplace/apis/fasta/v2/facilities", {headers: headers})
         .then(res => res.json())
@@ -36,7 +36,7 @@ class FetchAPIData extends React.Component {
         )
         .catch(function (error) {
             //Handle error
-            console.log(error);
+            console.error('Error Message:', error.message);
           });
     }
     
