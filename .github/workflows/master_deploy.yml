@@ -26,10 +26,9 @@ jobs:
       - run: npm run build
       - run: npm test
 
-      - name: curl
-          uses: wei/curl@v1
-          with:
-            args: -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
+      - name: REST API with cur
+        run: |
+            curl -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
 
       # - name: Deploy to Netlify
       #   uses: nwtgck/actions-netlify@v1.2
