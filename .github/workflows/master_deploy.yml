@@ -17,7 +17,7 @@ jobs:
     #   run:
     #     working-directory: ./
 
-    steps:
+    # steps:
       # - name: Check out branch
       #   uses: actions/checkout@v2
       #   with:
