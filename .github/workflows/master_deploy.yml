@@ -28,7 +28,7 @@ jobs:
 
       - name: REST API with cur
         run: |
-            curl -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
+            curl -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282trigger_branch=master&trigger_title=triggered+by+This+Awesome+Service&clear_cache=true
 
       # - name: Deploy to Netlify
       #   uses: nwtgck/actions-netlify@v1.2
