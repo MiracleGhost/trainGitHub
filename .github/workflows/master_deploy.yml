@@ -27,7 +27,7 @@ jobs:
       - run: npm test
 
       - name: curl
-          uses: actions/checkout@master
+          uses: wei/curl@v1
           with:
             args: -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
 
