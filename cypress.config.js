@@ -7,6 +7,10 @@ module.exports = defineConfig({
       bundler: "webpack",
     },
   },
+  e2e: {
+    baseUrl: 'http://localhost:3000',
+    specPattern: './src'
+  },
 
   viewportWidth: 1920,
   viewportHeight: 1080,
