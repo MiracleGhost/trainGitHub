@@ -29,7 +29,12 @@ jobs:
       - run: npm test
 
   deploy:
-      - name: Deploy to Netlify
+    name: Deploy to Netlify
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deployment
         uses: nwtgck/actions-netlify@v1.2
         with:
           publish-dir: './build'
