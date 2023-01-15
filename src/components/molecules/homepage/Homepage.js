@@ -15,6 +15,7 @@ export default function Navigation() {
 			<h3>Spar dir den Weg und schau mit ELEVATE! ob die Fahrstühle auf deiner Verbindung funktionieren.</h3>
 		</div>
 		<Map data-cy="home-map-alexanderplatz"  x={52.520008} y={13.404954} station={'Berlin Alexanderplatz'}/>
+		return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
     </div>
   );
 }
