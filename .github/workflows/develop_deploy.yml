@@ -1,0 +1,27 @@
+name: CI-Develop
+run-name: New push into Develop by ${{ github.actor }}  🚀
+on: 
+  push:
+    branches:
+     - develop
+     
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+          
+      - name: Use Node.js 14.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.0
+      - run: npm ci
+      - run: npm build
+      - run: npm test
