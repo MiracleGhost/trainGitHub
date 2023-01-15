@@ -24,12 +24,11 @@ jobs:
         with:
           node-version: 14.0
       - run: npm ci
-      - run: curl -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282?trigger_branch=master&trigger_title=triggered+by+This+Awesome+Service&clear_cache=true
-      # - run: npm run build
+      # - run: curl -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282?trigger_branch=master&trigger_title=triggered+by+This+Awesome+Service&clear_cache=true
+      - run: npm run build
       - run: npm test
-      
 
-
+  deploy:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
