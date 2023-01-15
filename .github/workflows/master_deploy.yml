@@ -1,6 +1,9 @@
-name: CI
-run-name: New push by ${{ github.actor }}  🚀
-on: [push]
+name: CI-Master
+run-name: New push into master by ${{ github.actor }}  🚀
+on: 
+  push:
+    branches:
+     - master
 
 jobs:
   build:
