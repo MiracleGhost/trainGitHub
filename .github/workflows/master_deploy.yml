@@ -40,3 +40,12 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
+  build2:
+    curl:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
