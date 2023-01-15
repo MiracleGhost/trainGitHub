@@ -26,7 +26,9 @@ jobs:
       - run: npm run build
       - run: npm test
 
-      - name: Deploy to Netlify
+
+    deploy:
+     - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
           publish-dir: './build'
@@ -41,7 +43,8 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
 
-        #  - name: curl and build
-        # uses: wei/curl@v1
-        # with:
-        #   args: -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
+      triggerBuild:
+         - name: curl and build
+            uses: wei/curl@v1
+            with:
+              args: -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
