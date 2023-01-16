@@ -1,56 +1,39 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src", "index.js"),
   output: {
-    path: path.resolve(__dirname, "build"),
-	publicPath: '/',
-	filename: 'index.bundle.js',
-  },
-	resolve: {
-		alias: {
-			components: path.resolve(__dirname, 'src'),
-		},
-		extensions: ['.js', '.jsx'],
-	},
-	devServer: {
-		hot: true,
-		open: true
-	},
-  module: {
-    rules: [
-      {
-        test: /\.js$|jsx/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-		  options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        },
-      },
-	  {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-	  { 
-		test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-		use: ["file-loader"] 
-	},
-    ]
-  },
-  module: {
-	rules: [
-	  {
-		test: /\.png/,
-		type: 'asset/resource'
-	  }
-	]
+    path: path.join(__dirname, "/build"), // the bundle output path
+    filename: "index.js", // the name of the bundle
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "public/index.html", // to import index.html file inside index.js
     }),
   ],
-}
+  devServer: {
+    port: 3000, // you can change the port
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/, // .js and .jsx files
+        exclude: /node_modules/, // excluding the node_modules folder
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.(sa|sc|c)ss$/, // styles files
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i, 
+		loader: 'file-loader',
+		options: {
+		name: 'src/img/[name].[ext]'
+    }
+      },
+    ],
+  },
+};
