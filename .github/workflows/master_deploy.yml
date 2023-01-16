@@ -19,7 +19,6 @@ jobs:
         with:
           ref: master
 
-    steps:
       - name: Use Node.js 14.0
         uses: actions/setup-node@v3
         with:
@@ -29,8 +28,6 @@ jobs:
       - run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_API }}
       # - run: npm run build
       # - run: npm test
-    
-    steps:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
@@ -46,7 +43,6 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
 
-      steps:
         - name: Create Sentry release
           uses: getsentry/action-release@v1
           env:
