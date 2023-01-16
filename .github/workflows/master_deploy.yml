@@ -31,6 +31,8 @@ jobs:
 
   deploy:
     need: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
@@ -48,6 +50,8 @@ jobs:
 
   release:
     needs: deploy
+    runs-on: ubuntu-latest
+    steps:
       - name: Create Sentry release
         uses: getsentry/action-release@v1
         env:
