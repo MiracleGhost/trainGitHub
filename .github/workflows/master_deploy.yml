@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 14.0
       - run: npm ci
+      - run: npm run build
       - run: curl -X POST -d {} https://api.netlify.com/build_hooks/63c47e8ddf14f631147d3282
       # - run: npm run build
       # - run: npm test
