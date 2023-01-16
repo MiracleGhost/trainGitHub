@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build Elevate
+    name: Build & Deploy Elevate
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,9 +29,6 @@ jobs:
       # - run: npm run build
       # - run: npm test
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
@@ -49,7 +46,8 @@ jobs:
         timeout-minutes: 1
 
   release:
-    needs: deploy
+    needs: build
+    name: Sentry
     runs-on: ubuntu-latest
     steps:
       - name: Create Sentry release
