@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Build, Test & Deploy Elevate
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,13 +24,15 @@ jobs:
         with:
           node-version: 14.0
       - run: npm ci
-      - run: npm build
-      - run: npm test
-      
+      - run: npm run build
+      - run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_API }}
+      # - run: npm run build
+      # - run: npm test
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: './'
+          publish-dir: 'build'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
@@ -40,3 +43,13 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
+
+      - name: Create Sentry release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+          # SENTRY_URL: https://sentry.io/
+        with:
+          environment: production

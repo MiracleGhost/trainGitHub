@@ -36,7 +36,7 @@ class FetchAPIData extends React.Component {
         )
         .catch(function (error) {
             //Handle error
-            console.log(error);
+            console.error('Error Message:', error.message);
           });
     }
     
