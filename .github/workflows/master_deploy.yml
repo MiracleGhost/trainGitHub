@@ -28,6 +28,7 @@ jobs:
       - run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_API }}
       # - run: npm run build
       # - run: npm test
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
