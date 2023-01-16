@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build & Deploy Elevate
+    name: Build, Test & Deploy Elevate
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -44,11 +44,6 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
 
-  update_monitor:
-    needs: build
-    name: Sentry
-    runs-on: ubuntu-latest
-    steps:
       - name: Create Sentry release
         uses: getsentry/action-release@v1
         env:
