@@ -26,8 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_API }}
-      # - run: npm run build
-      # - run: npm test
+      - run: npm test
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
@@ -50,6 +49,5 @@ jobs:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
           SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-          # SENTRY_URL: https://sentry.io/
         with:
           environment: production
