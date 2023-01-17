@@ -1,8 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./index.css";
-
-// icons
 import karteIcon from "../../../img/karte.png";
 import sucheImg from "../../../img/suche.png";
 import alarmImg from "../../../img/alarm.png";
