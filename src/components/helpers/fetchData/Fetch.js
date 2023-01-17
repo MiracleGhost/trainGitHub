@@ -14,7 +14,7 @@ class FetchAPIData extends React.Component {
 
   componentDidMount() {
     const headers = {
-      "DB-Client-Id": 'configdata.ID',
+      "DB-Client-Id": configdata.ID,
       "DB-Api-Key": configdata.KEY,
     };
     fetch(
