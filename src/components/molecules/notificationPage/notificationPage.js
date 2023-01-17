@@ -15,7 +15,7 @@ class NotificationPage extends React.Component {
 
   render() {
     return (
-      <div className="notification-page" data-cy="notification-page">
+      <div className="notification-page" data-testid="alarm-content">
         <MainLogo />
         <div className="text">
           <h3>
@@ -28,9 +28,9 @@ class NotificationPage extends React.Component {
           <form onSubmit={this.handleSubmit} data-testid="alarm-form">
             <label>
               E-Mail:
-              <input type="text" name="email" data-cy="alarm-input" />
+              <input type="text" name="email" data-testid="alarm-input" />
             </label>
-            <button type="submit" data-cy="alarm-submit">
+            <button type="submit" data-testid="alarm-submit">
               Los
             </button>
           </form>

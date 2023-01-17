@@ -9,3 +9,18 @@ test('Click on Map Link in Nav and get the Content', async () => {
   expect(screen.getByRole('heading')).toHaveTextContent('Mit der Karte kannst du nach nach einer Station suchen. Klicke auf einen Bahnhof.')
 });
 
+
+test('Navigation works properly ', async () => {
+  const { getByTestId } = render(<App />);
+  await userEvent.click(screen.getByTestId('home-link'))
+  expect(screen.getByTestId('home-content')).toBeInTheDocument();
+
+  await userEvent.click(screen.getByTestId('map-link'))
+  expect(screen.getByTestId('map-content')).toBeInTheDocument();
+
+  await userEvent.click(screen.getByTestId('search-link'))
+  expect(screen.getByTestId('search-content')).toBeInTheDocument();
+
+  await userEvent.click(screen.getByTestId('alarm-link'))
+  expect(screen.getByTestId('alarm-content')).toBeInTheDocument();
+});

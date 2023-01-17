@@ -11,7 +11,7 @@ class SearchPage extends Component {
 
   render() {
     return (
-      <div className="karte-page">
+      <div className="karte-page" data-testid="search-content">
         <MainLogo />
         <div className="text">
           <FetchAPIData />
@@ -19,12 +19,12 @@ class SearchPage extends Component {
             Mit der Karte kannst du nach nach einer Station suchen. Klicke auf
             einen Bahnhof.
           </h3>
-          <form onSubmit={this.handleSubmit} data-cy="search-station-form">
+          <form onSubmit={this.handleSubmit} data-testid="search-station-form">
             <label>
               Stationsuche:
-              <input type="text" name="station" data-cy="input-station" />
+              <input type="text" name="station" data-testid="input-station" />
             </label>
-            <button type="submit" data-cy="input-search-submit">
+            <button type="submit" data-testid="input-search-submit">
               Los
             </button>
           </form>
