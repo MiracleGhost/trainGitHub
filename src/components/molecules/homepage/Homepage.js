@@ -1,8 +1,5 @@
 import React from "react";
-
 import "./index.css";
-
-
 import {Map} from '../nav/map/Map'
 import MainLogo from '../../atoms/logoModule/MainLogo';
 

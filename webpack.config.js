@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   output: {
     path: path.join(__dirname, "/build"), // the bundle output path
-    filename: "index.js", // the name of the bundle
+    filename: "index.js", // the name of the bundle,
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -13,6 +14,7 @@ module.exports = {
   ],
   devServer: {
     port: 3000, // you can change the port
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -29,9 +31,9 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i, 
-		loader: 'file-loader',
-		options: {
-		name: 'src/img/[name].[ext]'
+        loader: 'file-loader',
+        options: {
+        name: 'src/img/[name].[ext]'
     }
       },
     ],
