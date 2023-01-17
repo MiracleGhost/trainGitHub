@@ -28,9 +28,11 @@ class NotificationPage extends React.Component {
           <form onSubmit={this.handleSubmit} data-testid="alarm-form">
             <label>
               E-Mail:
-              <input type="text" name="email" data-cy="alarm-input"/>
+              <input type="text" name="email" data-cy="alarm-input" />
             </label>
-            <button type="submit" data-cy="alarm-submit">Los</button>
+            <button type="submit" data-cy="alarm-submit">
+              Los
+            </button>
           </form>
         </div>
       </div>

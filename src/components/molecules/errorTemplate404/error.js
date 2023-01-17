@@ -14,10 +14,14 @@ class ErrorPage extends React.Component {
         <MainLogo />
         <div className="text">
           <h3>
-           	OOOOPSSS, etwas schief gelaufen!
-			   <form action="/">
-				<input type="submit" className="error_btn" value="Auf die Home Seite!" />
-			</form>
+            OOOOPSSS, etwas schief gelaufen!
+            <form action="/">
+              <input
+                type="submit"
+                className="error_btn"
+                value="Auf die Home Seite!"
+              />
+            </form>
           </h3>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default class AlarmResults extends Component {
     console.log(e.target);
     let target = e.target;
     target.parentNode.parentNode.removeChild(target.parentNode);
-  }
+  };
 
   render() {
     return (
@@ -53,7 +53,7 @@ export default class AlarmResults extends Component {
               <span>06:00 - 06:30</span>
               <span>16:00 - 16:30</span>
             </span>
-            <span className="active" title="active" ></span>
+            <span className="active" title="active"></span>
             <span>test@test.de</span>
             <span className="remove" onClick={this.removeDiv}></span>
           </div>
@@ -85,7 +85,11 @@ export default class AlarmResults extends Component {
             </span>
             <span className="not_active" title="disabled"></span>
             <span>test@test.de</span>
-            <span className="remove" data-cy="remove_line_result_three" onClick={this.removeDiv}></span>
+            <span
+              className="remove"
+              data-cy="remove_line_result_three"
+              onClick={this.removeDiv}
+            ></span>
           </div>
         </div>
       </div>
