@@ -5,11 +5,11 @@ import MainLogo from "../../atoms/logoModule/MainLogo";
 
 export default function Navigation() {
   return (
-    <div className="home-page">
+    <div className="home-page" data-testid="home-content">
       <MainLogo />
       <div className="text">
         <h3>
-          Du willst mit der Bahn fahren, aber der Fahrstuhl geht mal wieder
+          Maxim!!! Test 23! Du willst mit der Bahn fahren, aber der Fahrstuhl geht mal wieder
           nicht?
         </h3>
         <h3>
@@ -18,7 +18,7 @@ export default function Navigation() {
         </h3>
       </div>
       <Map
-        data-cy="home-map-alexanderplatz"
+        data-testid="home-map-alexanderplatz"
         x={52.520008}
         y={13.404954}
         station={"Berlin Alexanderplatz"}

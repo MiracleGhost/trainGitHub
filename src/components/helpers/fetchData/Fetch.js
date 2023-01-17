@@ -51,8 +51,7 @@ class FetchAPIData extends React.Component {
       return (
         <div className="search-drop">
           <span>Stationsuche: </span>
-          <select className="station-list" data-cy="fetch-data-station">
-            <option />
+          <select className="station-list" data-testid="fetch-data-station">
             {items.map((facility) => {
               return (
                 <option

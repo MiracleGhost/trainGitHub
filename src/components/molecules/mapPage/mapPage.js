@@ -6,7 +6,7 @@ import MainLogo from "../../atoms/logoModule/MainLogo";
 
 export default function MapPage() {
   return (
-    <div className="map-page">
+    <div className="map-page" data-testid="map-content">
       <MainLogo />
       <div className="text">
         <h3>

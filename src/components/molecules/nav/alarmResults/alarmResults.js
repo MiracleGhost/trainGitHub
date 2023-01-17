@@ -15,14 +15,13 @@ export default class AlarmResults extends Component {
   };
 
   removeDiv = (e) => {
-    console.log(e.target);
     let target = e.target;
     target.parentNode.parentNode.removeChild(target.parentNode);
   };
 
   render() {
     return (
-      <div className="alarm-result-page" data-cy="alarm-result-page">
+      <div className="alarm-result-page" data-testid="alarm-result-page">
         <MainLogo />
         <div className="text">
           <form onSubmit={this.handleSubmit}>
@@ -33,7 +32,7 @@ export default class AlarmResults extends Component {
             <button type="submit">Los</button>
           </form>
         </div>
-        <div className="results" data-cy="results">
+        <div className="results" data-testid="results">
           <h3>Meine Alarme</h3>
           <div className="label_line">
             <span style={{ marginRight: "130px" }}>Name</span>
@@ -43,7 +42,7 @@ export default class AlarmResults extends Component {
             <span>App</span>
           </div>
 
-          <div className="line_result_one">
+          <div className="line_result_one" data-testid="line_result_one">
             <span className="name">
               <span>Bahnhof Friedrichsstraße</span>
               <span>Gleis 1/2</span>
@@ -58,7 +57,7 @@ export default class AlarmResults extends Component {
             <span className="remove" onClick={this.removeDiv}></span>
           </div>
 
-          <div className="line_result_two">
+          <div className="line_result_two" data-testid="line_result_two">
             <span className="name">
               Bahnhof Friedrichsstraße <span></span>
               <span>Gleis 1/2</span>
@@ -73,9 +72,9 @@ export default class AlarmResults extends Component {
             <span className="remove" onClick={this.removeDiv}></span>
           </div>
 
-          <div className="line_result_three" data-cy="line_result_three">
+          <div className="line_result_three" data-testid="line_result_three">
             <span className="name">
-              Bahnhof Friedrichsstraße <span></span>
+              Bahnhof Friedrichsstraße Test 3 <span></span>
               <span>Gleis 1/2</span>
             </span>
             <span className="status">
@@ -87,7 +86,7 @@ export default class AlarmResults extends Component {
             <span>test@test.de</span>
             <span
               className="remove"
-              data-cy="remove_line_result_three"
+              data-testid="remove_line_result_three"
               onClick={this.removeDiv}
             ></span>
           </div>
