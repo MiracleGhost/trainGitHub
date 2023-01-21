@@ -9,7 +9,7 @@ export default function Navigation() {
       <MainLogo />
       <div className="text">
         <h3>
-          Maxim!!! Test 23! Du willst mit der Bahn fahren, aber der Fahrstuhl geht mal wieder
+          Du willst mit der Bahn fahren, aber der Fahrstuhl geht mal wieder
           nicht?
         </h3>
         <h3>

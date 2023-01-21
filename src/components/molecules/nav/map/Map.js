@@ -4,7 +4,6 @@ import "./index.css";
 
 class Map extends React.Component {
   render() {
-    // const position = [this.props.x, this.props.y];
     return (
       <MapContainer
         center={[this.props.x, this.props.y]}
